@@ -2,6 +2,8 @@ var generators = require('yeoman-generator');
 var _ = require('lodash');
 var mkdirp = require('mkdirp');
 
+var ejs = require('ejs');
+
 
 module.exports = generators.Base.extend({
 	testing : require('../../test_mode.js'),
@@ -81,6 +83,7 @@ module.exports = generators.Base.extend({
 		},
 
 		existingTech : function(){
+			this.useExistingTech = false;
 			if(!this.makeTechnology) return;
 			var done = this.async();
 			this.prompt([{
@@ -96,6 +99,7 @@ module.exports = generators.Base.extend({
 		},
 
 		testingRecipe : function(){
+			this.makeTestingRecipe = false;
 			if(!this.makeItem) return;
 			var done = this.async();
 			this.prompt([{
@@ -131,6 +135,13 @@ module.exports = generators.Base.extend({
 			this.conflicter.force = true;
 		},
 
+		loadEntityInfo : function(){
+			if(!this.makeEntity) return;
+
+			this.entityPrototype = ejs.render(this.fs.read(this.templatePath(this.entityType + '/prototype.lua')), this);
+
+		},
+
 		makePrototype : function(){
 			this.fs.copyTpl(
 				this.templatePath('prototype.lua'),
@@ -145,6 +156,18 @@ module.exports = generators.Base.extend({
 				this.destinationPath(this.objName + '/schematic.lua'),
 				this
 			);
+		},
+
+		copyImages : function(){
+			if(this.makeItem){
+				this.fs.copy(this.templatePath('img/icon.png'), this.destinationPath(this.objName + '/img/icon.png'));
+			}
+			if(this.makeTechnology){
+				this.fs.copy(this.templatePath('img/technology.png'), this.destinationPath(this.objName + '/img/technology.png'));
+			}
+			if(this.makeEntity){
+				this.fs.copy(this.templatePath(this.entityType + '/img'), this.destinationPath(this.objName + '/img'));
+			}
 		},
 
 		updateLocale : function(){

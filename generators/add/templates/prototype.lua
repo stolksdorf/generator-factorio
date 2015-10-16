@@ -64,5 +64,8 @@ data:extend({
 		},
 		order = "a-d-e",
 	},
+<% } %><% if(makeEntity){ %>
+	-- Entity
+<%- entityPrototype %>
 <% } %>
 })
