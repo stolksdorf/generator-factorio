@@ -1,0 +1,24 @@
+{
+  "name": "generator-factorio",
+  "version": "1.0.0",
+  "description": "A generator for building Factorio Mods",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "stolksdorf",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^0.15.1",
+    "lodash": "^3.10.1",
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^0.20.3"
+  },
+  "files": [
+    "generators/app",
+    "generators/release"
+  ]
+}
