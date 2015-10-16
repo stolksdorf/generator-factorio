@@ -18,7 +18,9 @@
     "yeoman-generator": "^0.20.3"
   },
   "files": [
+    "generators/add",
     "generators/app",
-    "generators/release"
+    "generators/release",
+    "generators/updateFAD"
   ]
 }
