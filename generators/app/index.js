@@ -2,8 +2,6 @@ var generators = require('yeoman-generator');
 var _ = require('lodash');
 
 module.exports = generators.Base.extend({
-	testing : require('../test_mode.js'),
-
 	prompting : {
 		modName : function () {
 			var done = this.async();

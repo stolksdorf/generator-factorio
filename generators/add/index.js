@@ -4,8 +4,6 @@ var mkdirp = require('mkdirp');
 var ejs = require('ejs');
 
 module.exports = generators.Base.extend({
-	testing : require('../test_mode.js'),
-
 	initializing : {
 		readInfo : function(){
 			if(!this.fs.exists(this.destinationPath('info.json'))){
