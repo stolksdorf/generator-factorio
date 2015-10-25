@@ -4,7 +4,7 @@ var mkdirp = require('mkdirp');
 var ejs = require('ejs');
 
 module.exports = generators.Base.extend({
-	testing : require('../../test_mode.js'),
+	testing : require('../test_mode.js'),
 
 	initializing : {
 		readInfo : function(){

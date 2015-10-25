@@ -2,7 +2,7 @@ var generators = require('yeoman-generator');
 var _ = require('lodash');
 
 module.exports = generators.Base.extend({
-	testing : require('../../test_mode.js'),
+	testing : require('../test_mode.js'),
 
 	install : {
 		updateFAD  : function(){

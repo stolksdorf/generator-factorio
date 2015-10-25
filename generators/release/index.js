@@ -5,7 +5,7 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 
 module.exports = generators.Base.extend({
-	testing : require('../../test_mode.js'),
+	testing : require('../test_mode.js'),
 
 	constructor: function () {
 		generators.Base.apply(this, arguments);
