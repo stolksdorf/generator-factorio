@@ -1,3 +1,4 @@
 node_modules
 TEST
 *.log
+!test_mode.js
