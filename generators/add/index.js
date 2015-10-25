@@ -1,7 +1,9 @@
 var generators = require('yeoman-generator');
 var _ = require('lodash');
 var mkdirp = require('mkdirp');
+var fs = require('fs');
 var ejs = require('ejs');
+var path = require('path');
 
 module.exports = generators.Base.extend({
 	initializing : {
@@ -10,7 +12,13 @@ module.exports = generators.Base.extend({
 				this.log("ERR: Can't find info.json. Make sure you're in the right mod directory");
 			}
 			this.info = this.fs.readJSON(this.destinationPath('info.json'));
-		}
+		},
+		getEntityChoices : function(){
+			var self = this;
+			this.entityChoices = fs.readdirSync(this.templatePath("")).filter(function(file) {
+				return fs.statSync(path.join(self.templatePath(""), file)).isDirectory() && file != 'img';
+			});
+		},
 	},
 
 	prompting : {
@@ -55,7 +63,9 @@ module.exports = generators.Base.extend({
 		entityTemplate : function(){
 			if(!this.makeEntity) return;
 
-			var choices = _.map(['lamp', 'combinator', 'car', 'assembler', 'generator', 'turret'], function(type){
+			//['lamp', 'combinator', 'car', 'assembler', 'generator', 'turret']
+
+			var choices = _.map(this.entityChoices, function(type){
 				return {
 					value : type,
 					name : type
@@ -110,7 +120,8 @@ module.exports = generators.Base.extend({
 			this.prompt({
 				type    : 'input',
 				name    : 'objName',
-				message : 'What do you like to call it?'
+				message : 'What do you like to call it?',
+				default : 'Robothing'
 			}, function (answer) {
 				this.objTitle = _.startCase(answer.objName);
 				this.objName = _.camelCase(answer.objName);
