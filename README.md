@@ -62,14 +62,14 @@ Grabs the newest version of FAD from Github and installs it into your `/FAD` of 
 ## Changelog
 
 #### 1.3.0 - Sunday, 25/10/2015
-	* Default generator now asks for a starting version of your mod
-	* Default generator creates a properly named mod folder for you
-	* Entity choices for the add generator are now read in dynamically
-	* Added better defaults to questions with required answers
-	* Updated the documentation
+* Default generator now asks for a starting version of your mod
+* Default generator creates a properly named mod folder for you
+* Entity choices for the add generator are now read in dynamically
+* Added better defaults to questions with required answers
+* Updated the documentation
 
 #### 1.2.0 - Saturday, 24/10/2015
-	* Now grabs a fesh version of FAD each time, instead of cached
+* Now grabs a fresh version of FAD each time, instead of cached
 
 #### 1.1.0 - Friday, 23/10/2015
-	* Updated to work with the newest version of FAD since the 0.12.11 update
+* Updated to work with the newest version of FAD since the 0.12.11 update
