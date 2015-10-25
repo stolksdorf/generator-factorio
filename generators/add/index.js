@@ -1,18 +1,12 @@
 var generators = require('yeoman-generator');
 var _ = require('lodash');
 var mkdirp = require('mkdirp');
-
 var ejs = require('ejs');
-
 
 module.exports = generators.Base.extend({
 	testing : require('../../test_mode.js'),
 
 	initializing : {
-		readEntityTemplates : function(){
-
-		},
-
 		readInfo : function(){
 			if(!this.fs.exists(this.destinationPath('info.json'))){
 				this.log("ERR: Can't find info.json. Make sure you're in the right mod directory");
@@ -137,9 +131,7 @@ module.exports = generators.Base.extend({
 
 		loadEntityInfo : function(){
 			if(!this.makeEntity) return;
-
 			this.entityPrototype = ejs.render(this.fs.read(this.templatePath(this.entityType + '/prototype.lua')), this);
-
 		},
 
 		makePrototype : function(){

@@ -52,7 +52,7 @@ module.exports = generators.Base.extend({
 			this.prompt([{
 				type: 'confirm',
 				name: 'useFAD',
-				message: 'Would you like to use FAD (Factorio modding toolkit)?',
+				message: 'Would you like to use FactorioAssistedDevelopment (FAD) toolkit?',
 				default: true
 			}], function (answer) {
 				this.useFAD = answer.useFAD

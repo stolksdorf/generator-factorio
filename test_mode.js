@@ -1,4 +1,4 @@
-var TEST_MODE = true;
+var TEST_MODE = false;
 
 module.exports = function(){
 	if(TEST_MODE){
