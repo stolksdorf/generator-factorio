@@ -104,10 +104,10 @@ module.exports = generators.Base.extend({
 			if(!this.useFAD) return;
 			var self = this;
 			var done = this.async();
-			this.remote('stolksdorf', 'FAD', function(err, remote) {
+			this.remote('stolksdorf', 'FAD', 'master', function(err, remote) {
 				remote.directory('.', 'FAD');
 				done();
-			});
+			}, true);
 		},
 	},
 

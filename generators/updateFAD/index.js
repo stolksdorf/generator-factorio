@@ -8,10 +8,10 @@ module.exports = generators.Base.extend({
 			var self = this;
 			var done = this.async();
 			this.log('Updating FAD to the newest version...')
-			this.remote('stolksdorf', 'FAD', function(err, remote) {
+			this.remote('stolksdorf', 'FAD', 'master', function(err, remote) {
 				remote.directory('.', 'FAD');
 				done();
-			});
+			}, true);
 		},
 	},
 });

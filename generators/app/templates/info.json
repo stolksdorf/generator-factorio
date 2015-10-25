@@ -4,5 +4,5 @@
 	"title": "<%= ModTitle %>",
 	"author": "<%= author %>",
 	"description": "<%= description %>",
-	"dependencies": ["base >= 0.12.0"]
+	"dependencies": ["base >= 0.12.11"]
 }
