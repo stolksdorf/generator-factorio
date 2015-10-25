@@ -4,10 +4,14 @@
 
 A [Yeoman](http://yeoman.io/) generator for building mods for [Factorio](https://www.factorio.com/)
 
+#### install
+
+`npm install -g yo generator-factorio`
+
 
 ## commands
 
-### default
+#### default
 
 `yo factorio`
 
@@ -21,7 +25,7 @@ This will create a new mod for you. It needs the mod name, description, starting
 * creates `[Mod Name]_[version]/control.lua`
 
 
-### add
+#### add
 
 `yo factorio:add`
 
@@ -34,7 +38,7 @@ Adds a new 'object' to your mod; entity, technology, item and/or recipe. Creates
 * modifies `data.lua`
 * modifies `locale/en/[Mod Name].cfg`
 
-### release
+#### release
 
 `yo factorio:release [version]`
 
@@ -45,7 +49,7 @@ This creates a new zipped release of your mod and adds it to the `/releases` fol
 
 **Note** : This will **not** change your development directory name. You will have to do that manually if you are testing locally.
 
-### updateFAD
+#### updateFAD
 
 `yo factorio:updateFAD`
 
